@@ -31,7 +31,7 @@ public class Discipline {
     public Discipline() {
     }
 
-    public Discipline(int id, String name) {
+    public Discipline(Integer id, String name) {
         this.id = id;
         this.name = name;
     }

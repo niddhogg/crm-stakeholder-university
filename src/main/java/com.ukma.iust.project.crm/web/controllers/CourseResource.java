@@ -1,7 +1,7 @@
 package com.ukma.iust.project.crm.web.controllers;
 
-import com.ukma.iust.project.crm.entities.Discipline;
-import com.ukma.iust.project.crm.services.DisciplineService;
+import com.ukma.iust.project.crm.entities.Course;
+import com.ukma.iust.project.crm.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,35 +16,36 @@ import java.util.List;
  */
 
 @Controller
-@RequestMapping("/rest/disciplines/")
-public class DisciplineResource {
+@RequestMapping("/rest/courses/")
+public class CourseResource {
+
     @Autowired
-    private DisciplineService disciplineService;
+    private CourseService courseService;
 
     @RequestMapping(value="", method= RequestMethod.GET, produces= MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public List<Discipline> findAll()
+    public List<Course> findAll()
     {
-        return disciplineService.findAll();
+        return courseService.findAll();
     }
 
     @RequestMapping(value="{id}", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public Discipline findDiscipline(@PathVariable("id") Integer id) {
-        return disciplineService.findDisciplineById(id);
+    public Course findCourse(@PathVariable("id") Integer id) {
+        return courseService.findCourseById(id);
     }
 
     @RequestMapping(value="", method=RequestMethod.PUT, produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<Discipline> updateDiscipline(@RequestBody Discipline discipline) {
-        Discipline savedDiscipline = disciplineService.update(discipline);
-        return new ResponseEntity<Discipline>(savedDiscipline, HttpStatus.OK);
+    public ResponseEntity<Course> updateCourse(@RequestBody Course course) {
+        Course savedCourse = courseService.update(course);
+        return new ResponseEntity<Course>(savedCourse, HttpStatus.OK);
     }
 
     @RequestMapping(value="{id}", method=RequestMethod.DELETE, produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<Void> deleteDiscipline(@PathVariable("id") Integer id) {
-        disciplineService.deleteDiscipline(id);
+    public ResponseEntity<Void> deleteCourse(@PathVariable("id") Integer id) {
+        courseService.deleteCourse(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

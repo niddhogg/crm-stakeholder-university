@@ -31,20 +31,20 @@ public class SkillResource {
 
     @RequestMapping(value="{id}", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public Skill findSkill(@PathVariable("id") int id) {
+    public Skill findSkill(@PathVariable("id") Integer id) {
         return skillService.findSkillById(id);
     }
 
     @RequestMapping(value="", method=RequestMethod.PUT, produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<Skill> updateUser(@RequestBody Skill skill) {
+    public ResponseEntity<Skill> updateSkill(@RequestBody Skill skill) {
         Skill savedSkill = skillService.update(skill);
         return new ResponseEntity<Skill>(savedSkill, HttpStatus.OK);
     }
 
     @RequestMapping(value="{id}", method=RequestMethod.DELETE, produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<Void> deleteSkill(@PathVariable("id") int id) {
+    public ResponseEntity<Void> deleteSkill(@PathVariable("id") Integer id) {
         skillService.deleteSkill(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

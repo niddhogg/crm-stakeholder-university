@@ -15,10 +15,11 @@
 <body>
  <jsp:include page="header.jsp" />
 	<h2>Administrator Home Page</h2>
-	<a class="btn btn-primary" href="${rootURL}addUser"> Додати
-				користувача </a>
-	<a class="btn btn-primary" href="${rootURL }rest/users/">
-				Список користувачів </a>
+	<a class="btn btn-primary" href="${rootURL}addUser"> Додати	користувача </a>
+	<a class="btn btn-primary" href="${rootURL }rest/users/">Список користувачів </a>
+ 	<a class="btn btn-primary" href="${rootURL }rest/courses/">Список курсів </a>
+    <a class="btn btn-primary" href="${rootURL }rest/disciplines/">Список дисциплін </a>
+    <a class="btn btn-primary" href="${rootURL }rest/skills/">Список навичок </a>
 	
 </body>
 </html>

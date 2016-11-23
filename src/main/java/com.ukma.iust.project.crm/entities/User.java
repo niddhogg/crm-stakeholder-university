@@ -53,7 +53,7 @@ public class User
 		return true;
 	}
 
-	public User(int id, String name, String email, String password, Date dob) {
+	public User(Integer id, String name, String email, String password, Date dob) {
 		this.id = id;
 		this.name = name;
 		this.email = email;

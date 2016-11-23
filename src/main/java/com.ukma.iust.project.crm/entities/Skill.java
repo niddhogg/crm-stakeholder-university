@@ -23,7 +23,7 @@ public class Skill {
     public Skill() {
     }
 
-    public Skill(int id, String name) {
+    public Skill(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
