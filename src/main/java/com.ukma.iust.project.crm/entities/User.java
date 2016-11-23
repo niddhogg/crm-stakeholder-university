@@ -14,14 +14,14 @@ import java.util.Set;
 
 @Entity
 @Indexed
-@Table(name="USERS")
+@Table(name="user")
 public class User 
 {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	@Field
 	private String name;
-	@Column(nullable=false, unique=true)
+	@Column(nullable=false, unique=true,name = "login")
 	@Field
 	private String email;
 	@Column(nullable=false)
@@ -39,7 +39,7 @@ public class User
 	
 	public boolean isUserInRole(String roleName){
 		for(Role role:roles){
-			if (!role.getRoleName().equals(roleName))
+			if (!role.getRoleName().equalsIgnoreCase(roleName))
 				return false;
 		}
 		
