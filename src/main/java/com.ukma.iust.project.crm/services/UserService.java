@@ -30,7 +30,7 @@ public class UserService
 		return userRepository.save(user);
 	}
 
-	public User findUserById(int id) {
+	public User findUserById(Integer id) {
 		return userRepository.findOne(id);
 	}
 
@@ -43,7 +43,7 @@ public class UserService
 		return userRepository.save(user);
 	}
 
-	public void deleteUser(int id) {
+	public void deleteUser(Integer id) {
 		userRepository.delete(id);
 	}
 

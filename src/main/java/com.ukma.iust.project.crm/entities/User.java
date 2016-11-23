@@ -17,8 +17,10 @@ import java.util.Set;
 @Table(name="user")
 public class User 
 {
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "user_id")
+	private Integer id;
 	@Field
 	private String name;
 	@Column(nullable=false, unique=true,name = "login")
@@ -32,10 +34,15 @@ public class User
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="user_id")
 	private Set<Role> roles = new HashSet<Role>();
-	
+
+
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinTable(name="user_skill", joinColumns=@JoinColumn(name="user_id", referencedColumnName="user_id"),
+			inverseJoinColumns=@JoinColumn(name="skill_id", referencedColumnName="skill_id"))
+	private Set<Skill> skills = new HashSet<Skill>();
+
 	public User() {
 	}
-	
 	
 	public boolean isUserInRole(String roleName){
 		for(Role role:roles){
@@ -106,6 +113,14 @@ public class User
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
+	}
+
+	public Set<Skill> getSkills() {
+		return skills;
+	}
+
+	public void setSkills(Set<Skill> skills) {
+		this.skills = skills;
 	}
 	
 }
