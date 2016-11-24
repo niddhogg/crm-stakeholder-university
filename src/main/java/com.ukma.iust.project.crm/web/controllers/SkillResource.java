@@ -4,10 +4,12 @@ import com.ukma.iust.project.crm.entities.Skill;
 import com.ukma.iust.project.crm.services.SkillService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +18,7 @@ import java.util.List;
  */
 
 @Controller
-@RequestMapping("/rest/skills/")
+@RequestMapping("/skills/")
 public class SkillResource {
 
     @Autowired
@@ -35,7 +37,7 @@ public class SkillResource {
         return skillService.findSkillById(id);
     }
 
-    @RequestMapping(value="", method=RequestMethod.PUT, produces=MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="update/{id}", method=RequestMethod.PUT, produces=MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<Skill> updateSkill(@RequestBody Skill skill) {
         Skill savedSkill = skillService.update(skill);
@@ -48,5 +50,22 @@ public class SkillResource {
         skillService.deleteSkill(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/skill", method = RequestMethod.GET)
+    public String getSkill( Model model) {
+        List<Skill> skills = skillService.findAll();
+
+        model.addAttribute("skills", skills);
+
+
+        return "listSkillStakeholder";
+    }
+
+    @RequestMapping(value ="/skillstakeholder")
+    public void submitSkills(@RequestParam(value = "userIds", required = true) long[] userIds)
+    {
+        System.out.println("TODO saving");
+    }
+
 
 }

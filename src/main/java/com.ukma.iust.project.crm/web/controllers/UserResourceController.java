@@ -35,7 +35,6 @@ public class UserResourceController {
 			@Valid @ModelAttribute("user") User user,
 			BindingResult result) {
 
-		user.setDob(new Date());
 		System.out.println("result has errors: " + result.hasErrors());
 
 		System.out.println("User set: " + user.getName());

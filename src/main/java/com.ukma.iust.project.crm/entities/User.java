@@ -28,7 +28,10 @@ public class User
 	private String email;
 	@Column(nullable=false)
 	private String password;
-	private Date dob;
+
+	private String first_name;
+
+	private String last_name;
 
 
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
@@ -58,13 +61,12 @@ public class User
 		this.name = name;
 		this.email = email;
 		this.password = password;
-		this.dob = dob;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", email=" + email
-				+ ", dob=" + dob + "]";
+				+ "]";
 	}
 
 	public int getId() {
@@ -99,12 +101,20 @@ public class User
 		this.password = password;
 	}
 
-	public Date getDob() {
-		return dob;
+	public String getFirst_name() {
+		return first_name;
 	}
 
-	public void setDob(Date dob) {
-		this.dob = dob;
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
+	}
+
+	public String getLast_name() {
+		return last_name;
+	}
+
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
 	}
 
 	public Set<Role> getRoles() {

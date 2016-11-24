@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 public interface UserRepository extends JpaRepository<User, Serializable>{
@@ -17,6 +18,9 @@ public interface UserRepository extends JpaRepository<User, Serializable>{
 	User findUserByEmail(String email);
 
 	public User save(User user);
+
+	@Query(value = "select u from User u inner join u.roles r where r.user = u and r.roleName='student'")
+	List<User> findAllStudents();
 
 
 }

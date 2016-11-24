@@ -10,6 +10,11 @@
 <body>
 <jsp:include page="header.jsp" />
 <div class="container">
+    <div class="hero-unit">
+        <a class="btn btn-primary" href="${rootURL}skills/skill">Необхідні для мене навички </a>
+        <a class="btn btn-primary" href="${rootURL }skill/studentToSkill">
+         Студенти, що відповідають вимогам </a>
+    </div>
 
 </div>
 

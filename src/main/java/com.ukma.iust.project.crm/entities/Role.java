@@ -18,6 +18,10 @@ public class Role implements Serializable
 	private Integer id;
 	@Column(name="role_name",nullable=false)
 	private String roleName;
+
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinColumn(name = "user_id")
+	private User user;
 	
 	public Role() {
 	}
