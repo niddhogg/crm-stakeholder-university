@@ -4,6 +4,7 @@
 package com.ukma.iust.project.crm.services;
 
 
+import com.ukma.iust.project.crm.entities.Skill;
 import com.ukma.iust.project.crm.entities.User;
 import com.ukma.iust.project.crm.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +56,12 @@ public class UserService
 	public List<User> findAllStudents() {
 		return userRepository.findAllStudents();
 	}
-	
+
+	public List<User> findAllStakeholders() {
+		return userRepository.findAllStakeholders();
+	}
+
+
 	
 }
 

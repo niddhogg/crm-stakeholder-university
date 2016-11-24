@@ -22,5 +22,7 @@ public interface UserRepository extends JpaRepository<User, Serializable>{
 	@Query(value = "select u from User u inner join u.roles r where r.user = u and r.roleName='student'")
 	List<User> findAllStudents();
 
+	@Query(value = "select u from User u inner join u.roles r where r.user = u and r.roleName='stakeholder'")
+	List<User> findAllStakeholders();
 
 }

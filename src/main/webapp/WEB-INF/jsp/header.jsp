@@ -1,5 +1,6 @@
+<%@ page import="com.ukma.iust.project.crm.web.controllers.UserController" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@include file="/WEB-INF/jsp/taglib.jsp"%>
@@ -50,6 +51,10 @@ body {
 					<li><a href="${rootURL}about"> Про програму</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
+					<sec:authorize access="isAuthenticated()">
+					<li>${UserController.getCurrentUser()==null ? "" : UserController.getCurrentUser().getName()}
+					</li>
+					</sec:authorize>
 					<li><a href="${rootURL}login/form">Login</a></li>
 					<li><a href="${rootURL}logout">Logout</a></li>
 				</ul>

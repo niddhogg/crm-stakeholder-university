@@ -10,7 +10,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp" />
-
+<jsp:include page="stakeholder.jsp"/>
 <div class="container">
     <h2>Список доступних навичок</h2>
     <br />

@@ -6,35 +6,29 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Cтуденти</title>
+    <title>Навички</title>
 </head>
 <body>
 <jsp:include page="header.jsp" />
-<jsp:include page="stakeholder.jsp"/>
+<jsp:include page="student.jsp" />
 
 <div class="container">
-    <h2>Студенти, що підходять моїм вимогам </h2>
+    <h2>Редагувати мої навички</h2>
     <br />
-
-    <table class="table table-hover">
-        <th>Прізвище</th>
-        <th>Ім'я</th>
-        <th>Навички</th>
-
-        <c:forEach items="${students}" var="student">
-            <tr>
-                <td>${student.last_name}</td>
-                <td>${student.first_name}</td>
-                <td>
-                    <c:forEach items="${student.skills}" var="skill">
-                        ${skill.name},
-                    </c:forEach>
-                    </td>
-
-            </tr>
-        </c:forEach>
-    </table>
-   <!-- <nav>
+    <!-- <a class="btn btn-primary" href="${rootURL}addDormitory"> Додати
+        гуртожиток </a>-->
+    <form:form commandName="listOwnSkills">
+        <table class="table table-hover">
+            <c:forEach items="${skills}" var="skill">
+                <tr>
+                    <td><input type="checkbox" name = "userIds" value = "${user.id}"  /> </td>
+                    <td><!--<a href="${rootURL}${skill.id}">-->${skill.name}</td>
+                </tr>
+            </c:forEach>
+        </table>
+        <input type="submit" class="btn" value="Зберегти" />
+    </form:form>
+    <!--<nav>
         <ul class="pagination">
             <li>
                 <a href="#" aria-label="Previous">
@@ -52,8 +46,7 @@
                 </a>
             </li>
         </ul>
-    </nav>
-    -->
+    </nav>-->
 </div>
 </body>
 </html>

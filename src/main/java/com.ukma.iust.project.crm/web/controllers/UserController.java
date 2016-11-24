@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
+import java.util.Set;
 
 
 @Controller
@@ -42,7 +43,7 @@ public class UserController
 	}
 
 
-	@RequestMapping(value = "/skill/studentToSkill", method = RequestMethod.GET)
+	@RequestMapping(value = "/studentToSkill", method = RequestMethod.GET)
 	public String getSkill( Model model) {
 		List<User> students = userService.findAllStudents();
 
@@ -51,5 +52,27 @@ public class UserController
 
 		return "studentToSkill";
 	}
+
+
+	@RequestMapping(value = "listStakeholders", method = RequestMethod.GET)
+	public String getStakeholdes( Model model) {
+		List<User> stakeholders = userService.findAllStakeholders();
+
+		model.addAttribute("stakeholders", stakeholders);
+
+
+		return "listStakeholders";
+	}
+
+	@RequestMapping(value = "/listOwnSkills", method = RequestMethod.GET)
+	public String getOwnSkills( Model model) {
+		Set<Skill> skills = getCurrentUser().getSkills();
+
+		model.addAttribute("skills", skills);
+
+
+		return "listOwnSkills";
+	}
+
 }
 

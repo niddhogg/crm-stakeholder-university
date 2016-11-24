@@ -17,11 +17,11 @@ public class UserHomePageRedirectController {
 		if (user.isUserInRole("ADMIN"))
 			return "admin";
 		if (user.isUserInRole("STUDENT"))
-		return "student";
+		return "listStakeholders";
 		if (user.isUserInRole("STAKEHOLDER"))
 			return "stakeholder";
 		if (user.isUserInRole("TUTOR"))
-			return "tutor";
+			return "listStakeholders";
 
 		return "redirect:index.jsp";
 	}
