@@ -11,8 +11,7 @@
 <div class="container">
 	<div class="hero-unit">
 		<a class="btn btn-primary" href="${rootURL}listStakeholders">Stakeholders </a>
-		<a class="btn btn-primary" href="${rootURL }listOwnSkills">
-			Власні навички </a>
+		<a class="btn btn-primary" href="${rootURL }listOwnSkills">Власні навички </a>
 	</div>
 
 </div>

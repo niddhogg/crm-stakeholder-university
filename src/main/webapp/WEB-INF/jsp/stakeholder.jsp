@@ -12,11 +12,9 @@
 <div class="container">
     <div class="hero-unit">
         <a class="btn btn-primary" href="${rootURL}skill">Необхідні для мене навички </a>
-        <a class="btn btn-primary" href="${rootURL }studentToSkill">
-         Студенти, що відповідають вимогам </a>
+        <a class="btn btn-primary" href="${rootURL }studentToSkill">Студенти, що відповідають вимогам </a>
+
     </div>
-
 </div>
-
 </body>
 </html>

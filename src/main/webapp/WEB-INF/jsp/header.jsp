@@ -62,12 +62,8 @@ body {
 		</div>
 	</div>
 
-	<script src="${rootURL}resources/js/jquery-1.8.3.js">
-		
-	</script>
-
-	<script src="${rootURL}resources/bootstrap/js/bootstrap.js">
-		
-	</script>
+	<!-- <script src="${rootURL}resources/js/jquery.min.js"></script>
+	<script src="${rootURL}resources/bootstrap/js/bootstrap.js"></script>
+	-->
 </body>
 </html>
