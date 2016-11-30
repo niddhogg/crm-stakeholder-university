@@ -62,7 +62,7 @@
                         },
                         attr: {dy: "15px"},
                         centralClick: function(item) {
-                            alert("Here is more details: " + item.text + "!!");
+                            alert("Here will be the list of companies: " + item.text + "!!");
                         }
                     }
                 },
@@ -118,7 +118,8 @@
     </script>
     <style>
         .bubbleChart {
-            width: 90%;
+            width: 80%;
+            height: 80%;
             margin: 0 auto;
         }
 
