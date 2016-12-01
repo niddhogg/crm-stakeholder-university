@@ -18,7 +18,7 @@ import java.util.List;
  */
 
 @Controller
-@RequestMapping("/rest/skill/")
+@RequestMapping("/rest/skills/")
 public class SkillResource {
 
     @Autowired
