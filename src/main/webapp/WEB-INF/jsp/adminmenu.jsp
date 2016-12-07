@@ -6,4 +6,5 @@
     <a class="btn btn-primary" href="${rootURL }rest/disciplines/">Список дисциплін </a>
     <a class="btn btn-primary" href="${rootURL }rest/skills/">Список навичок </a>
     <a class="btn btn-primary" href="${rootURL }callCenter">Кол центр</a>
+    <a class="btn btn-primary" href="${rootURL }callCenter">Планування навчального року</a>
 </div>
